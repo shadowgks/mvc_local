@@ -1,4 +1,6 @@
 <?php
 
-// echo $_SERVER['REQUEST_URI'];
-var_dump($_SERVER);
+
+require_once 'autoload.php';
+
+new App();
