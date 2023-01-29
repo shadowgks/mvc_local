@@ -2,9 +2,10 @@
 
 class App
 {
-    protected $controller;
-    protected $action;
+    protected $controller = "HomeController";
+    protected $action = "index";
     protected $params = [];
+    
 
     function __construct()
     {
@@ -43,9 +44,9 @@ class App
     private function render()
     {
         if(class_exists($this->controller)){
-            $controllerHome = new $this->controller;
-            if(method_exists($controllerHome, $this->action)){ 
-                call_user_func_array([$controllerHome,$this->action], $this->params);
+            $controller = new $this->controller;
+            if(method_exists($controller, $this->action)){ 
+                call_user_func_array([$controller,$this->action], $this->params);
             }else{
                 echo "This Methode Not Exist!";
             }
